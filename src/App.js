@@ -1,14 +1,14 @@
 import React from "react";
 import "./app.css";
-import { SfButton, SfCheckbox } from "@storefront-ui/react";
 import FooterComponent from "./components/FooterComponent/FooterComponent";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+import CostcoxShopContainer from "./components/CostcoxShopContainer/CostcoxShopContainer";
 
 const App = () => {
   return (
     <>
-      {/* <h1 className="text-primary text-4xl font-bold">
-        Hello world! I am using React
-      </h1> */}
+      <HeaderComponent />
+      <CostcoxShopContainer />
       <FooterComponent />
     </>
   );
