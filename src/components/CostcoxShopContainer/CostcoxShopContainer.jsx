@@ -1,5 +1,9 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import CostcoXShopComponent from "../CostcoXShopComponent/CostcoXShopComponent";
+import ShoppingCartPage from "../ShoppingCart/ShoppingCartPage";
+import { ShoppingCartWrapper } from "../ShoppingCart/ShoppingCartWrapper";
+import Account from "../Account/Account";
 
 function Home() {
   return (
@@ -27,11 +31,11 @@ function Contact() {
 
 const CostcoxShopContainer = () => {
   return (
-    <div>
+    <div className="">
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/" element={<CostcoXShopComponent />} />
+        <Route exact path="/cart" element={<ShoppingCartWrapper/>} />
+        <Route exact path="/account" element={<Account />} />
       </Routes>
     </div>
   );
