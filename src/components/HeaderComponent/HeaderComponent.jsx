@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   SfButton,
   SfIconShoppingCart,
@@ -11,6 +12,7 @@ import {
 } from "@storefront-ui/react";
 
 export default function HeaderComponent() {
+  const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
 
   const actionItems = [
@@ -19,18 +21,20 @@ export default function HeaderComponent() {
       label: "",
       ariaLabel: "Cart",
       role: "button",
+      fn: () => navigate("/cart"),
     },
     {
       icon: <SfIconFavorite />,
       label: "",
       ariaLabel: "Wishlist",
-      role: "button",
+      fn: () => navigate("/wishlist"),
     },
     {
       label: "Log in",
       icon: <SfIconPerson />,
       ariaLabel: "Log in",
       role: "login",
+      fn: () => navigate("/login"),
     },
   ];
 
@@ -115,6 +119,7 @@ export default function HeaderComponent() {
                 variant="tertiary"
                 square
                 slotPrefix={actionItem.icon}
+                onClick={() => actionItem.fn()}
               >
                 {actionItem.role === "login" && (
                   <p className="hidden xl:inline-flex whitespace-nowrap">

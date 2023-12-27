@@ -1,37 +1,28 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
-function Home() {
-  return (
-    <div>
-      <h1>This is the home page</h1>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h1>This is the about page</h1>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div>
-      <h1>This is the contact page</h1>
-    </div>
-  );
-}
+import LoginPageComponent from "../AccountComponent/LoginPageComponent";
+import AccountSettings from "../AccountComponent/AccountSettings";
+import UserOrdersComponent from "../AccountComponent/UserOrdersComponent";
+import UserSettingsComponent from "../AccountComponent/UserSettingsComponent";
+import UserAddressComponent from "../AccountComponent/UserAddressComponent";
+import UserPaymentMethods from "../AccountComponent/UserPaymentMethods";
+import MainShopContainer from "../ProductsComponent/MainShopContainer";
+import ProductDetailComponent from "../ProductsComponent/ProductDetailComponent";
 
 const CostcoxShopContainer = () => {
   return (
     <div>
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/login" element={<LoginPageComponent />} />
+        <Route exact path="/register" element={<LoginPageComponent />} />
+        <Route path="/account-settings" element={<AccountSettings />}>
+          <Route path="orders" element={<UserOrdersComponent />} />
+          <Route path="settings" element={<UserSettingsComponent />} />
+          <Route path="address" element={<UserAddressComponent />} />
+          <Route path="payments" element={<UserPaymentMethods />} />
+        </Route>
+        <Route exact path="/shop" element={<MainShopContainer />} />
+        <Route path="/products/:id" element={<ProductDetailComponent />} />
       </Routes>
     </div>
   );

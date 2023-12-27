@@ -1,0 +1,23 @@
+.grid-areas-product-page {
+  grid-template-areas:
+    "left-top right"
+    "left-bottom right";
+}
+
+.grid-areas-product-page {
+  grid-template-areas:
+    "left-top right"
+    "left-bottom right";
+}
+
+.grid-in-left-top {
+  grid-area: left-top;
+}
+
+.grid-in-right {
+  grid-area: right;
+}
+
+.grid-in-left-bottom {
+  grid-area: left-bottom;
+}
