@@ -167,7 +167,7 @@ const bottomLinks = [
 ];
 export default function FooterComponent() {
   return (
-    <footer className="pt-10 bg-neutral-100">
+    <footer className="pt-10 bg-neutral-100 mt-20">
       <div className="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-[1536px] mx-auto">
         {categories.map(({ label, subcategories }) => (
           <ul className="grid grid-cols xs:pb-4" key={label}>
@@ -245,7 +245,7 @@ export default function FooterComponent() {
           ))}
         </div>
         <p className="flex items-center justify-center py-2 leading-5 text-center typography-text-sm text-white/50 font-body md:ml-6">
-          @2023 Vue Storefront
+          @2023 CostcoX
         </p>
       </div>
     </footer>
