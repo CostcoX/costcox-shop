@@ -1,5 +1,5 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import store from "./src/store/store.js";
@@ -14,3 +14,11 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
+// hydrateRoot(
+//   document.getElementById("root"),
+//   <Provider store={store}>
+//     <BrowserRouter>
+//       <App />
+//     </BrowserRouter>
+//   </Provider>
+// );
