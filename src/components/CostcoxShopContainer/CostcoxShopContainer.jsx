@@ -11,7 +11,6 @@ import ProductDetailComponent from "../ProductsComponent/ProductDetailComponent"
 import CostcoXShopComponent from "../CostcoXShopComponent/CostcoXShopComponent";
 import ShoppingCartPage from "../ShoppingCart/ShoppingCartPage";
 import { ShoppingCartWrapper } from "../ShoppingCart/ShoppingCartWrapper";
-import Account from "../Account/Account";
 
 const CostcoxShopContainer = () => {
   return (
@@ -29,7 +28,6 @@ const CostcoxShopContainer = () => {
         <Route path="/products/:id" element={<ProductDetailComponent />} />
         <Route exact path="/" element={<CostcoXShopComponent />} />
         <Route exact path="/cart" element={<ShoppingCartWrapper />} />
-        <Route exact path="/account" element={<Account />} />
       </Routes>
     </div>
   );

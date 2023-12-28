@@ -116,13 +116,6 @@ const ProductDetailsCard = () => {
           <SfButton
             size="sm"
             variant="tertiary"
-            slotPrefix={<SfIconCompareArrows size="sm" />}
-          >
-            Compare
-          </SfButton>
-          <SfButton
-            size="sm"
-            variant="tertiary"
             slotPrefix={<SfIconFavorite size="sm" />}
           >
             Add to list
