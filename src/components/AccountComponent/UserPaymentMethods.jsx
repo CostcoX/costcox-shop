@@ -48,7 +48,7 @@ const UserPaymentMethods = () => {
             <h2 class="text-xl md:text-2xl font-bold">Payment Methods</h2>
             <a
               href="#"
-              class="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded"
+              class="bg-transparent hover:bg-[#4db6c8] text-[#4db6c8] font-semibold hover:text-white py-2 px-4 border border-[#4db6c8] hover:border-transparent rounded"
               data-bs-toggle="modal"
               data-bs-target="#paymentModal"
             >

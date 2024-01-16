@@ -30,7 +30,7 @@ const UserAddressComponent = () => {
         <div className="p-12">
           <div className="flex justify-between mb-6">
             <h2 className="mb-0 text-2xl text-slate-800 font-bold">Address</h2>
-            <button className="bg-transparent hover:bg-green-500 text-green-700 font-semibold hover:text-white py-2 px-4 border border-green-500 hover:border-transparent rounded">
+            <button className="bg-transparent hover:bg-[#4db6c8] text-[#4db6c8] font-semibold hover:text-white py-2 px-4 border border-[#4db6c8] hover:border-transparent rounded">
               Add a new address
             </button>
           </div>

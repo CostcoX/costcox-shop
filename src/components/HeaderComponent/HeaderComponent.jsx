@@ -85,13 +85,13 @@ const NavBar = () => {
   const handleNavigation = (url) => navigate(url);
 
   return (
-    <div className="bg-white p-4 sticky top-0 z-10 border-b-2 border-primary-blue">
+    <div className="bg-white p-4 sticky top-0 z-10 border-b-2 border-green-700">
       <div className="flex items-center justify-between ">
         <a href="#" className="text-white">
           <img
             src="/logo.png"
             alt="Logo"
-            className=" w-[160px] h-[20px] lg:w-[200px] lg:h-[50px] object-cover"
+            className=" w-full h-[100px] lg:w-[200px] lg:h-[75px] object-cover"
           />
         </a>
 
@@ -117,7 +117,7 @@ const NavBar = () => {
 
           {/* Mobile menu dropdown */}
           {showMobileMenu && (
-            <div className="absolute right-0 top-12 bg-primary-light p-2 mt-2 rounded-md z-10 shadow-md">
+            <div className="absolute right-0 top-12 bg-green-200 p-2 mt-2 rounded-md z-10 shadow-md">
               <div className="text-black cursor-pointer mb-2">
                 <SfIconLocationOn
                   className="h-6 w-6 inline mr-2"
@@ -125,10 +125,12 @@ const NavBar = () => {
                 />
                 Location
               </div>
-              <div className="text-black cursor-pointer mb-2">
-                <SfButton className="relative" square variant="tertiary">
-                  <SfIconShoppingCart />
+              <div className="text-black cursor-pointer mb-2 ml-0">
+                <SfButton className="relative" square variant="tertiary">                  
+                  <SfIconShoppingCart 
+                  className="h-6 w-6 inline "/> 
                   <SfBadge content={100} max={99} placement="top-right" />
+                  <p>Cart</p>                                 
                 </SfButton>
               </div>
               <div className="text-black cursor-pointer mb-2">
@@ -144,54 +146,76 @@ const NavBar = () => {
         </div>
 
         {/* Icons for medium and large screens */}
-        <div className="hidden md:flex items-center">
-          <SfIconLocationOn className="text-black mx-4 cursor-pointer" />
+        <div className="hidden md:flex items-center ">
+        <SfButton
+            className="relative hover:bg-[#cceaef] w-fit active:bg-[#cceaef]"
+            square
+            variant="tertiary"
+            onClick={() => navigate("/")}
+          >
+          <SfIconLocationOn className="text-black mx-4 cursor-pointer " />
+          </SfButton>
           <SfButton
-            className="relative"
+            className="relative hover:bg-[#cceaef]"
             square
             variant="tertiary"
             onClick={() => navigate("/cart")}
           >
-            <SfIconShoppingCart />
+            <SfIconShoppingCart className="text-black" />
             <SfBadge content={100} max={0} placement="top-right" />
           </SfButton>
+          <SfButton
+            className="relative hover:bg-[#cceaef]"
+            square
+            variant="tertiary"
+            onClick={() => navigate("/")}
+          >
           <SfIconFavorite className="text-black mx-4 cursor-pointer" />
-          <Link to="/account-settings/orders">
+          </SfButton>
+          <SfButton
+            className="relative hover:bg-[#cceaef]"
+            square
+            variant="tertiary"
+            onClick={() => navigate("/account-settings/orders")}
+          >
+          <Link to="">
             <SfIconPerson className="text-black mx-4 cursor-pointer" />
           </Link>
+          </SfButton>
         </div>
       </div>
 
       <div className="mt-4">
-        <div className="flex items-center relative">
+        <div className="flex items-center relative justify-evenly ">
           <button
             ref={categoriesButtonRef}
-            className="text-white focus:outline-none text-xs md:text-base bg-green-700 p-2 rounded-lg"
+            className="text-white focus:outline-none text-xs md:text-base bg-[#0096B1] p-2 rounded-lg"
             onClick={() => setShowCategories(true)}
           >
             All Categories
           </button>
 
           <button
-            className=" text-black px-4 py-2 rounded"
+            className=" text-black  py-2 rounded"
             onClick={() => handleNavigation("/shop")}
           >
             All Products
           </button>
           <button
-            className="text-black mx-4 text-xs md:text-base"
+            className="text-black  text-xs md:text-base"
             onClick={() => handleNavigation("/shop")}
           >
             Top Products
           </button>
           <button
-            className="text-black focus:outline-none text-xs md:text-base"
+            className="text-black focus:outline-none text-base md:text-base disabled:opacity-40 cursor-not-allowed "
             onClick={() => handleNavigation("/shop")}
+            disabled
           >
             Deals
           </button>
           {showCategories && (
-            <div className="absolute bg-primary-light  mt-2 rounded-md shadow-md top-10 left-0 w-full md:w-fit z-10 h-72 overflow-scroll">
+            <div className="absolute bg-[#cceaef] mt-2 rounded-md shadow-md top-10 md:left-20 w-full md:w-fit z-10 h-72 overflow-y-scroll ">
               {allDeptCategories.map((Category) => (
                 <a to={Category.href} key={Category.id} className="block p-2">
                   {Category.categoryName}

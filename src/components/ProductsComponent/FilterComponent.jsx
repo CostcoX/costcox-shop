@@ -72,9 +72,9 @@ const FilterComponent = (props) => {
         Sort by
       </h5>
       <div className="px-2">
-        <SfSelect aria-label="Sorting">
+        <SfSelect aria-label="Sorting" className="border-[#0096b1]">
           {sortOptions.map((option) => (
-            <option value={option.value} key={option.value}>
+            <option value={option.value} key={option.value} className="hover:border-[#0096b1]">
               {option.label}
             </option>
           ))}
@@ -127,17 +127,17 @@ const FilterComponent = (props) => {
                         as="a"
                         href={link}
                         className={classNames(
-                          "first-of-type:mt-2 rounded-md active:bg-primary-100",
+                          "first-of-type:mt-2 rounded-md active:bg-[#4db6c8]",
                           {
-                            "bg-primary-100 hover:bg-primary-100 font-medium":
-                              categoryIndex === 0,
+                            "bg-[#4db6c8] hover:bg-[#4db6c8] font-medium":
+                              categoryIndex === 1,
                           }
                         )}
                         slotSuffix={
-                          categoryIndex === 0 && (
+                          categoryIndex === 1 && (
                             <SfIconCheck
                               size="sm"
-                              className="text-primary-700"
+                              className="text-black"
                             />
                           )
                         }
@@ -170,7 +170,7 @@ const FilterComponent = (props) => {
                     )}
                     slotPrefix={
                       <SfRadio
-                        className="flex items-center"
+                        className="flex items-center hover:bg-[#4db6c8] hover:border-[#4db6c8]"
                         disabled={counter === 0}
                         value={value}
                         checked={price === value}
@@ -204,7 +204,7 @@ const FilterComponent = (props) => {
                     )}
                     slotPrefix={
                       <SfRadio
-                        className="flex items-center"
+                        className="flex items-center hover:bg-[#4db6c8] hover:border-[#4db6c8] active:bg-[#4db6c8]"
                         value={value}
                         checked={rating === value}
                         name="radio-rating"
@@ -235,12 +235,12 @@ const FilterComponent = (props) => {
       <div className="flex justify-between">
         <SfButton
           variant="secondary"
-          className="w-full mr-3"
+          className="w-full mr-3 border-red-700 hover:bg-transparent text-red-700 active:bg-red-600 hover:text-red-700 active:text-white"
           onClick={handleClearFilters}
         >
           Clear all filters
         </SfButton>
-        <SfButton className="w-full">Show products</SfButton>
+        <SfButton className="w-full bg-[#0096b1] hover:bg-[#00879f] active:bg-[#0096b1]">Show products</SfButton>
       </div>
     </aside>
   );

@@ -68,6 +68,12 @@ const products = [
   
 
 const ProductsGrid = () => {
+  
+    const buttonStyle = {
+      backgroundColor: "#0096B1",
+    color:"#fff",
+  } 
+    
   return (
     <>
         <div className='mt-10'>
@@ -91,10 +97,10 @@ const ProductsGrid = () => {
           variant="tertiary"
           size="sm"
           square
-          className="absolute bottom-0 right-0 mr-2 mb-2 bg-white hover:bg-primary-light active:bg-primary-blue-light ring-1 ring-inset ring-neutral-200 !rounded-full"
+          className="absolute bottom-0 right-0 mr-2 mb-2 bg-white hover:bg-red-300 active:bg-red-300 ring-1 ring-inset ring-neutral-200 !rounded-full"
           aria-label="Add to wishlist"
         >
-          <SfIconFavorite size="sm" className='bg-white hover:bg-primary-light active:bg-primary-light'/>
+          <SfIconFavorite size="sm" className='bg-transparent text-red-700 active:text-white   '/>
         </SfButton>
       </div>
       <div className="p-4 border-t border-neutral-200 max-h-44">
@@ -106,11 +112,11 @@ const ProductsGrid = () => {
           <SfRating size="xs" value={product.rating} max={5} />
 
           <SfLink href="#" variant="secondary" className="pl-1 no-underline">
-            <SfCounter size="xs">{123}</SfCounter>
+            <SfCounter size="xs">{126}</SfCounter>
           </SfLink>
         </div>       
         <span className="block pb-2 font-bold typography-text-lg">${product.price}</span>
-        <SfButton size="sm" className='bg-primary-blue hover:bg-primary-blue-hover active:bg-primary-blue mb-5' slotPrefix={<SfIconShoppingCart size="sm" />}>
+        <SfButton size="md" style={buttonStyle} className="" slotPrefix={<SfIconShoppingCart size="sm" />}>
           Add to cart
         </SfButton>
       </div>

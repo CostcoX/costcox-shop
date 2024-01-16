@@ -14,95 +14,24 @@ import {
   SfListItem,
 } from "@storefront-ui/react";
 
-const categories = [
-  {
-    label: "How to buy",
-    subcategories: [
-      {
-        subcategoryLabel: "Payment methods",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Order pickup",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Purchase status",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Track orders",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Returns",
-        link: "#",
-      },
-    ],
-  },
-  {
-    label: "Help",
-    subcategories: [
-      {
-        subcategoryLabel: "Help centers",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Security & fraud",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Feedback",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Contact",
-        link: "#",
-      },
-    ],
-  },
-  {
-    label: "Services",
-    subcategories: [
-      {
-        subcategoryLabel: "Gift cards",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Order pickup",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Purchase status",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Track orders",
-        link: "#",
-      },
-    ],
-  },
+const categories = [ 
   {
     label: "About",
     subcategories: [
       {
         subcategoryLabel: "About us",
-        link: "#",
+        link: "/about-us",
       },
       {
-        subcategoryLabel: "Order pickup",
+        subcategoryLabel: "Contact Us",
         link: "#",
+      },      
+      {
+        subcategoryLabel: "Return Policies",
+        link: "/Return-Policy",
       },
       {
-        subcategoryLabel: "Purchase status",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Track orders",
-        link: "#",
-      },
-      {
-        subcategoryLabel: "Returns",
+        subcategoryLabel: "Terms & Condition",
         link: "#",
       },
     ],
@@ -166,21 +95,23 @@ const bottomLinks = [
   },
 ];
 export default function FooterComponent() {
+  const d = new Date();
+let year = d.getFullYear();
   return (
-    <footer className="pt-10 bg-neutral-100 mt-20">
-      <div className="grid justify-center grid-cols-[1fr_1fr] md:grid-cols-[repeat(4,1fr)] px-4 md:px-6 pb-10 max-w-[1536px] mx-auto">
+    <footer className="pt-3 bg-neutral-100 mt-20">
+      
+      <div className=" px-4 md:px-6 pb-3 max-w-[1536px] mx-auto">
+      
+      <div className="">
         {categories.map(({ label, subcategories }) => (
-          <ul className="grid grid-cols xs:pb-4" key={label}>
-            <li className="ml-4 text-lg font-medium leading-7 text-neutral-900 font-body">
-              {label}
-            </li>
+          <ul className="flex flex-col sm:flex sm:flex-row xs:pb-4" key={label}>             
             {subcategories?.map(({ subcategoryLabel, link }) => (
               <SfListItem
-                className="py-2 !bg-transparent typography-text-sm font-body"
+                className="py-2 !bg-transparent typography-text-sm font-body w-fit text-center"
                 key={subcategoryLabel}
               >
                 <SfLink
-                  className="no-underline text-neutral-600 hover:underline hover:!text-neutral-900 active:underline active:!text-neutral-900"
+                  className=" text-black no-underline  hover:underline  "
                   variant="secondary"
                   href={link}
                 >
@@ -190,9 +121,18 @@ export default function FooterComponent() {
             ))}
           </ul>
         ))}
+        </div>
+        <div className="align-middle">
+       <img
+            src="/logo.png"
+            alt="Logo"
+            className=" w-full max-h-[100px]  object-contain"
+          />
+          <p className="text-center">@{year} CostcoX All Rights Reserved</p>
+      </div>
       </div>
       <hr />
-      <div className="py-10 md:flex md:mx-auto max-w-[1536px]">
+      {/* <div className="py-10 md:flex md:mx-auto max-w-[1536px]">
         {contactOptions.map(({ label, icon: Icon, link, details }) => (
           <div className="mx-auto my-4 text-center" key={label}>
             <Icon />
@@ -215,8 +155,8 @@ export default function FooterComponent() {
             ))}
           </div>
         ))}
-      </div>
-      <div className="bg-neutral-900 justify-end px-4 py-10 md:flex md:py-6 max-w-[1536px] mx-auto">
+      </div> */}
+      {/* <div className="bg-neutral-900 justify-end px-4 py-10 md:flex md:py-6 max-w-[1536px] mx-auto">
         <div className="flex justify-center py-2 gap-x-4 md:self-start">
           {socialMedia.map(({ icon: Icon, label, link }) => (
             <SfButton
@@ -245,9 +185,9 @@ export default function FooterComponent() {
           ))}
         </div>
         <p className="flex items-center justify-center py-2 leading-5 text-center typography-text-sm text-white/50 font-body md:ml-6">
-          @2023 CostcoX
+        @{year} CostcoX
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 }

@@ -25,10 +25,10 @@ const ProductCard = () => {
           variant="tertiary"
           size="sm"
           square
-          className="absolute bottom-0 right-0 mr-2 mb-2 bg-white ring-1 ring-inset ring-neutral-200 !rounded-full"
+          className="absolute bottom-0 right-0 mr-2 mb-2 bg-white hover:bg-red-300 active:bg-red-300 ring-1 ring-inset ring-neutral-200 !rounded-full"
           aria-label="Add to wishlist"
         >
-          <SfIconFavorite size="sm" />
+          <SfIconFavorite size="sm" className='bg-transparent text-red-700 active:text-white   ' />
         </SfButton>
       </div>
       <div className="p-4 border-t border-neutral-200">
@@ -45,7 +45,7 @@ const ProductCard = () => {
         <span className="block pb-2 font-bold typography-text-lg">
           $2345,99
         </span>
-        <SfButton size="sm" slotPrefix={<SfIconShoppingCart size="sm" />}>
+        <SfButton size="sm" variant="tertiary" className="bg-[#0096B1] text-white border-[#0096B1] hover:bg-[#0096B1] hover:text-white active:bg-[#00879f] active:text-white" slotPrefix={<SfIconShoppingCart size="sm" />}>
           Add to cart
         </SfButton>
       </div>
