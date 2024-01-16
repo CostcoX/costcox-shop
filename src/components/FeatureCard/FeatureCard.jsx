@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SfButton, SfIconPackage, SfIconWarehouse, SfIconPublishedWithChanges } from '@storefront-ui/react';
 import classNames from 'classnames';
 
@@ -18,7 +18,7 @@ const cardDetails = [
     isDisabled: false,
   },
   {
-    icon: <SfIconPublishedWithChanges size="2xl" className='text-primary-blue' />,
+    icon: <SfIconPublishedWithChanges size="2xl" className='text-green-700' />,
     title: 'Free 30-Day returns',
     description: 'Learn about our commitments to ethics, our team, our communities and more.',
     buttonText: 'Read more',
@@ -26,29 +26,48 @@ const cardDetails = [
   },
 ];
 
-export default function FeatureCard() {
+export default function FeatureCard({items}) {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleClick = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
   return (
-    <div className="flex flex-wrap gap-4 lg:gap-6 lg:flex-nowrap justify-center mt-20">
-      {cardDetails.map(({ icon, title, description, buttonText, isDisabled }) => (
-        <div key={title} className="flex flex-col w-full max-w-[325px] sm:w-[375px] lg:w-[496px] items-center">
-          <span className={classNames(isDisabled && 'text-disabled-900')}>{icon}</span>
-          <div className="p-4 flex flex-col items-center">
-            <p className={classNames('font-medium typography-text-base', { 'text-disabled-900': isDisabled })}>
-              {title}
-            </p>
-            <p
-              className={classNames('mt-1 mb-4 font-normal typography-text-sm text-neutral-700 text-center', {
-                'text-disabled-700': isDisabled,
-              })}
+    <div className="max-w-4xl mx-auto mt-3">
+      <p className='text-xl font-bold text-center'>Frequently Asked Questions</p>
+    {items.map((item, index) => (
+      <div key={index} className="mb-4 mt-5">
+        <div
+          className="bg-gray-200 cursor-pointer p-4 rounded-md  "
+          onClick={() => handleClick(index)}
+        >
+          <div className="flex justify-between items-center">
+            <span className="font-semibold">{item.title}</span>
+            <svg
+              className={`w-6 h-6 transition-transform transform ${
+                index === activeIndex ? 'rotate-180' : ''
+              }`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              {description}
-            </p>
-            <SfButton size="sm"  disabled={isDisabled} className="mt-auto  bg-primary-blue hover:bg-primary-blue-hover active:bg-primary-blue">
-              {buttonText}
-            </SfButton>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
           </div>
         </div>
-      ))}
-    </div>
+        {index === activeIndex && (
+          <div className="bg-[#80cbd8] p-4 mt-2 rounded-md">
+            <p>{item.content}</p>
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
   );
 }

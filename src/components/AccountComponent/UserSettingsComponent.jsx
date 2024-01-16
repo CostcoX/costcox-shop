@@ -60,7 +60,7 @@ const UserSettingsComponent = () => {
                   />
                 </div>
                 <button
-                  class="shadow bg-green-600 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-md"
+                  class="shadow bg-[#4db6c8] hover:bg-[#0096b1] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-md"
                   type="button"
                 >
                   Save Details
@@ -107,7 +107,7 @@ const UserSettingsComponent = () => {
                   </p>
                 </div>
                 <button
-                  class="shadow bg-green-600 hover:bg-green-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-md"
+                  class="shadow bg-[#4db6c8] hover:bg-[ #00879f] focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-md"
                   type="button"
                 >
                   Save Password

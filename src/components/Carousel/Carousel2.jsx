@@ -64,7 +64,7 @@ export default function Carousel2() {
                 </p>
                 <h2 className={classNames('mb-4 mt-2 font-bold typography-display-3 tracking-normal leading-none', titleClass)}>{title}</h2>
                 <p className="typography-text-base block mb-4">{description}</p>
-                <SfButton className="!bg-primary-blue text-xs lg:text-base tracking-normal leading-none w-fit">{buttonText}</SfButton>
+                <SfButton className="bg-[#0096B1] text-xs lg:text-base tracking-normal leading-none w-fit">{buttonText}</SfButton>
               </div>
               <img src={image} alt={title} className="w-1/2 self-end object-contain" />
             </div>

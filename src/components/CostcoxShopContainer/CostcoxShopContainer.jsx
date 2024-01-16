@@ -11,8 +11,11 @@ import ProductDetailComponent from "../ProductsComponent/ProductDetailComponent"
 import CostcoXShopComponent from "../CostcoXShopComponent/CostcoXShopComponent";
 import ShoppingCartPage from "../ShoppingCart/ShoppingCartPage";
 import { ShoppingCartWrapper } from "../ShoppingCart/ShoppingCartWrapper";
+import ReturnPolicy from "../ReturnPolicy/ReturnPolicy";
+import AboutUs from "../AboutUs/AboutUs";
 
 const CostcoxShopContainer = () => {
+ 
   return (
     <div>
       <Routes>
@@ -28,6 +31,9 @@ const CostcoxShopContainer = () => {
         <Route path="/products/:id" element={<ProductDetailComponent />} />
         <Route exact path="/" element={<CostcoXShopComponent />} />
         <Route exact path="/cart" element={<ShoppingCartWrapper />} />
+        <Route exact path="/return-policy" element={<ReturnPolicy/>}/>
+        <Route exact path="/about-us" element={<AboutUs />}/>
+  
       </Routes>
     </div>
   );
