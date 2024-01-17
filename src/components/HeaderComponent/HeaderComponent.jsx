@@ -13,6 +13,7 @@ import {
 
 import LocationModal from "../LocationModal/LocationModal";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import logoImg from "../../../public/images/logo.png";
 const allDeptCategories = [
   { id: 101, categoryName: "Electronics", href: "/electronics" },
   { id: 102, categoryName: "Home Appliances", href: "/electronics" },
@@ -89,7 +90,7 @@ const NavBar = () => {
       <div className="flex items-center justify-between ">
         <a href="#" className="text-white">
           <img
-            src="/logo.png"
+            src={logoImg}
             alt="Logo"
             className=" w-full h-[100px] lg:w-[200px] lg:h-[75px] object-cover"
           />
@@ -126,11 +127,10 @@ const NavBar = () => {
                 Location
               </div>
               <div className="text-black cursor-pointer mb-2 ml-0">
-                <SfButton className="relative" square variant="tertiary">                  
-                  <SfIconShoppingCart 
-                  className="h-6 w-6 inline "/> 
+                <SfButton className="relative" square variant="tertiary">
+                  <SfIconShoppingCart className="h-6 w-6 inline " />
                   <SfBadge content={100} max={99} placement="top-right" />
-                  <p>Cart</p>                                 
+                  <p>Cart</p>
                 </SfButton>
               </div>
               <div className="text-black cursor-pointer mb-2">
@@ -147,13 +147,13 @@ const NavBar = () => {
 
         {/* Icons for medium and large screens */}
         <div className="hidden md:flex items-center ">
-        <SfButton
+          <SfButton
             className="relative hover:bg-[#cceaef] w-fit active:bg-[#cceaef]"
             square
             variant="tertiary"
             onClick={() => navigate("/")}
           >
-          <SfIconLocationOn className="text-black mx-4 cursor-pointer " />
+            <SfIconLocationOn className="text-black mx-4 cursor-pointer " />
           </SfButton>
           <SfButton
             className="relative hover:bg-[#cceaef]"
@@ -170,7 +170,7 @@ const NavBar = () => {
             variant="tertiary"
             onClick={() => navigate("/")}
           >
-          <SfIconFavorite className="text-black mx-4 cursor-pointer" />
+            <SfIconFavorite className="text-black mx-4 cursor-pointer" />
           </SfButton>
           <SfButton
             className="relative hover:bg-[#cceaef]"
@@ -178,9 +178,9 @@ const NavBar = () => {
             variant="tertiary"
             onClick={() => navigate("/account-settings/orders")}
           >
-          <Link to="">
-            <SfIconPerson className="text-black mx-4 cursor-pointer" />
-          </Link>
+            <Link to="">
+              <SfIconPerson className="text-black mx-4 cursor-pointer" />
+            </Link>
           </SfButton>
         </div>
       </div>
