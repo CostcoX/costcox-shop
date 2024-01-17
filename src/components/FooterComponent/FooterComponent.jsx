@@ -13,8 +13,9 @@ import {
   SfLink,
   SfListItem,
 } from "@storefront-ui/react";
+import logoImg from "../../../public/images/logo.png";
 
-const categories = [ 
+const categories = [
   {
     label: "About",
     subcategories: [
@@ -25,7 +26,7 @@ const categories = [
       {
         subcategoryLabel: "Contact Us",
         link: "#",
-      },      
+      },
       {
         subcategoryLabel: "Return Policies",
         link: "/Return-Policy",
@@ -96,40 +97,41 @@ const bottomLinks = [
 ];
 export default function FooterComponent() {
   const d = new Date();
-let year = d.getFullYear();
+  let year = d.getFullYear();
   return (
     <footer className="pt-3 bg-neutral-100 mt-20">
-      
       <div className=" px-4 md:px-6 pb-3 max-w-[1536px] mx-auto">
-      
-      <div className="">
-        {categories.map(({ label, subcategories }) => (
-          <ul className="flex flex-col sm:flex sm:flex-row xs:pb-4" key={label}>             
-            {subcategories?.map(({ subcategoryLabel, link }) => (
-              <SfListItem
-                className="py-2 !bg-transparent typography-text-sm font-body w-fit text-center"
-                key={subcategoryLabel}
-              >
-                <SfLink
-                  className=" text-black no-underline  hover:underline  "
-                  variant="secondary"
-                  href={link}
+        <div className="">
+          {categories.map(({ label, subcategories }) => (
+            <ul
+              className="flex flex-col sm:flex sm:flex-row xs:pb-4"
+              key={label}
+            >
+              {subcategories?.map(({ subcategoryLabel, link }) => (
+                <SfListItem
+                  className="py-2 !bg-transparent typography-text-sm font-body w-fit text-center"
+                  key={subcategoryLabel}
                 >
-                  {subcategoryLabel}
-                </SfLink>
-              </SfListItem>
-            ))}
-          </ul>
-        ))}
+                  <SfLink
+                    className=" text-black no-underline  hover:underline  "
+                    variant="secondary"
+                    href={link}
+                  >
+                    {subcategoryLabel}
+                  </SfLink>
+                </SfListItem>
+              ))}
+            </ul>
+          ))}
         </div>
         <div className="align-middle">
-       <img
-            src="/logo.png"
+          <img
+            src={logoImg}
             alt="Logo"
             className=" w-full max-h-[100px]  object-contain"
           />
           <p className="text-center">@{year} CostcoX All Rights Reserved</p>
-      </div>
+        </div>
       </div>
       <hr />
       {/* <div className="py-10 md:flex md:mx-auto max-w-[1536px]">
