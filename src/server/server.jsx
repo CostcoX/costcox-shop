@@ -5,7 +5,7 @@ import bodyParser from "body-parser";
 import fs from "fs";
 import { StaticRouter } from "react-router-dom/server";
 import ReactDOMServer from "react-dom/server";
-import App from "../App";
+import App from "../client/App";
 import indexRouter from "./routes/index";
 
 const app = express();

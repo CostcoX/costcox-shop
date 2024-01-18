@@ -8,7 +8,9 @@
     "build": "webpack .",
     "clean": "rm -rf ./dist",
     "local:build": "npm run clean && webpack --config webpack.config.js",
-    "local:server": "npm run local:build && node ./dist/server.cjs"
+    "local:server": "npm run local:build && node ./dist/server.cjs",
+    "local:web": "npm run clean && webpack --config webpack.config.js --watch",
+    "local:node": "npm run local:build && nodemon --watch src/server --exec node ./dist/server.cjs"
   },
   "repository": {
     "type": "git",
@@ -49,6 +51,7 @@
     "classnames": "^2.3.2",
     "cors": "^2.8.5",
     "css-loader": "^6.8.1",
+    "dot-prop": "^8.0.2",
     "express": "^4.18.2",
     "postcss-loader": "^7.3.3",
     "react": "^18.1.0",
@@ -56,7 +59,9 @@
     "react-redux": "^9.0.4",
     "react-router-dom": "^6.20.1",
     "redux": "^5.0.0",
+    "redux-observable": "^3.0.0-rc.2",
     "regenerator-runtime": "^0.14.1",
+    "rxjs": "^7.8.1",
     "style-loader": "^3.3.3"
   }
 }

@@ -1,8 +1,8 @@
 import React from "react";
-import amexIcon from "../../../public/images/payment-icons/amex-icon.svg";
-import discoverIcon from "../../../public/images/payment-icons/discover-icon.svg";
-import mastercardIcon from "../../../public/images/payment-icons/mastercard-icon.svg";
-import visaIcon from "../../../public/images/payment-icons/visa-icon.svg";
+import amexIcon from "../../../../public/images/payment-icons/amex-icon.svg";
+import discoverIcon from "../../../../public/images/payment-icons/discover-icon.svg";
+import mastercardIcon from "../../../../public/images/payment-icons/mastercard-icon.svg";
+import visaIcon from "../../../../public/images/payment-icons/visa-icon.svg";
 
 const PaymentMethods = [
   {
