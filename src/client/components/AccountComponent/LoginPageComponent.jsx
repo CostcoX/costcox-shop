@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import googleIcons from "../../../public/images/googleicon.svg";
+import googleIcons from "../../../../public/images/googleicon.svg";
 import { isLoginPage } from "../../common/utils";
 import { Link } from "react-router-dom";
 

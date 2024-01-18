@@ -13,7 +13,7 @@ import {
   SfLink,
   SfListItem,
 } from "@storefront-ui/react";
-import logoImg from "../../../public/images/logo.png";
+import logoImg from "../../../../public/images/logo.png";
 
 const categories = [
   {

@@ -13,7 +13,7 @@ import {
 
 import LocationModal from "../LocationModal/LocationModal";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logoImg from "../../../public/images/logo.png";
+import logoImg from "../../../../public/images/logo.png";
 const allDeptCategories = [
   { id: 101, categoryName: "Electronics", href: "/electronics" },
   { id: 102, categoryName: "Home Appliances", href: "/electronics" },
