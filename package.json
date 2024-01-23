@@ -7,7 +7,7 @@
     "start": "webpack-dev-server .",
     "build": "webpack .",
     "clean": "rm -rf ./dist",
-    "local:build": "npm run clean && webpack --config webpack.config.js",
+    "local:build": " webpack --config webpack.config.js",
     "local:server": "npm run local:build && node ./dist/server.cjs",
     "local:web": "npm run clean && webpack --config webpack.config.js --watch",
     "local:node": "npm run local:build && nodemon --watch src/server --exec node ./dist/server.cjs"

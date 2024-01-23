@@ -86,7 +86,7 @@ const NavBar = () => {
   const handleNavigation = (url) => navigate(url);
 
   return (
-    <div className="bg-white p-4 sticky top-0 z-10 border-b-2 border-green-700">
+    <div className="bg-white p-4 sticky top-0 z-10 border-b-2 border-[#0096B1]">
       <div className="flex items-center justify-between ">
         <a href="#" className="text-white">
           <img
@@ -118,7 +118,7 @@ const NavBar = () => {
 
           {/* Mobile menu dropdown */}
           {showMobileMenu && (
-            <div className="absolute right-0 top-12 bg-green-200 p-2 mt-2 rounded-md z-10 shadow-md">
+            <div className="absolute right-0 top-12 bg-[#cceaef] p-2 mt-2 rounded-md z-10 shadow-md">
               <div className="text-black cursor-pointer mb-2">
                 <SfIconLocationOn
                   className="h-6 w-6 inline mr-2"
@@ -148,7 +148,7 @@ const NavBar = () => {
         {/* Icons for medium and large screens */}
         <div className="hidden md:flex items-center ">
           <SfButton
-            className="relative hover:bg-[#cceaef] w-fit active:bg-[#cceaef]"
+            className="relative hover:!bg-[#cceaef] w-fit active:!bg-[#cceaef]"
             square
             variant="tertiary"
             onClick={() => navigate("/")}
@@ -156,7 +156,7 @@ const NavBar = () => {
             <SfIconLocationOn className="text-black mx-4 cursor-pointer " />
           </SfButton>
           <SfButton
-            className="relative hover:bg-[#cceaef]"
+            className="relative hover:!bg-[#cceaef] active:!bg-[#cceaef]"
             square
             variant="tertiary"
             onClick={() => navigate("/cart")}
@@ -165,7 +165,7 @@ const NavBar = () => {
             <SfBadge content={100} max={0} placement="top-right" />
           </SfButton>
           <SfButton
-            className="relative hover:bg-[#cceaef]"
+            className="relative hover:!bg-[#cceaef] active:!bg-[#cceaef]"
             square
             variant="tertiary"
             onClick={() => navigate("/")}
@@ -173,7 +173,7 @@ const NavBar = () => {
             <SfIconFavorite className="text-black mx-4 cursor-pointer" />
           </SfButton>
           <SfButton
-            className="relative hover:bg-[#cceaef]"
+            className="relative hover:!bg-[#cceaef] active:!bg-[#cceaef]"
             square
             variant="tertiary"
             onClick={() => navigate("/account-settings/orders")}
@@ -190,7 +190,8 @@ const NavBar = () => {
           <button
             ref={categoriesButtonRef}
             className="text-white focus:outline-none text-xs md:text-base bg-[#0096B1] p-2 rounded-lg"
-            onClick={() => setShowCategories(true)}
+            onMouseMove={() => setShowCategories(true)} 
+            onMouseOut={() => setShowCategories(false)} 
           >
             All Categories
           </button>
@@ -199,23 +200,24 @@ const NavBar = () => {
             className=" text-black  py-2 rounded"
             onClick={() => handleNavigation("/shop")}
           >
-            All Products
+            Home
           </button>
           <button
             className="text-black  text-xs md:text-base"
             onClick={() => handleNavigation("/shop")}
           >
-            Top Products
+            All Products
           </button>
           <button
             className="text-black focus:outline-none text-base md:text-base disabled:opacity-40 cursor-not-allowed "
             onClick={() => handleNavigation("/shop")}
-            disabled
+            
           >
-            Deals
+            Top Products
           </button>
           {showCategories && (
-            <div className="absolute bg-[#cceaef] mt-2 rounded-md shadow-md top-10 md:left-20 w-full md:w-fit z-10 h-72 overflow-y-scroll ">
+            <div className="absolute bg-[#cceaef] mt-2 rounded-md shadow-md top-10 md:left-[13%] w-full md:w-fit z-10 h-72 overflow-y-scroll no-scrollbar" 
+            onMouseMove={() => setShowCategories(true)}   >
               {allDeptCategories.map((Category) => (
                 <a to={Category.href} key={Category.id} className="block p-2">
                   {Category.categoryName}
