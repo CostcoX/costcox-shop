@@ -9,7 +9,8 @@ const MainShopContainer = () => {
   const nodeRef = useRef(null);
   const drawerRef = useRef(null);
 
-  useTrapFocus(drawerRef, { activeState: open });
+  // NOTE: Should look why this is causing an error on ssr
+  // useTrapFocus(drawerRef, { activeState: open && open });
 
   return (
     <div className="max-w-screen-3xl mx-auto md:px-6 lg:px-10">

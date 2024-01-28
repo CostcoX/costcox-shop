@@ -190,15 +190,15 @@ const NavBar = () => {
           <button
             ref={categoriesButtonRef}
             className="text-white focus:outline-none text-xs md:text-base bg-[#0096B1] p-2 rounded-lg"
-            onMouseMove={() => setShowCategories(true)} 
-            onMouseOut={() => setShowCategories(false)} 
+            onMouseMove={() => setShowCategories(true)}
+            onMouseOut={() => setShowCategories(false)}
           >
             All Categories
           </button>
 
           <button
             className=" text-black  py-2 rounded"
-            onClick={() => handleNavigation("/shop")}
+            onClick={() => handleNavigation("/")}
           >
             Home
           </button>
@@ -211,13 +211,14 @@ const NavBar = () => {
           <button
             className="text-black focus:outline-none text-base md:text-base disabled:opacity-40 cursor-not-allowed "
             onClick={() => handleNavigation("/shop")}
-            
           >
             Top Products
           </button>
           {showCategories && (
-            <div className="absolute bg-[#cceaef] mt-2 rounded-md shadow-md top-10 md:left-[13%] w-full md:w-fit z-10 h-72 overflow-y-scroll no-scrollbar" 
-            onMouseMove={() => setShowCategories(true)}   >
+            <div
+              className="absolute bg-[#cceaef] mt-2 rounded-md shadow-md top-10 md:left-[13%] w-full md:w-fit z-10 h-72 overflow-y-scroll no-scrollbar"
+              onMouseMove={() => setShowCategories(true)}
+            >
               {allDeptCategories.map((Category) => (
                 <a to={Category.href} key={Category.id} className="block p-2">
                   {Category.categoryName}

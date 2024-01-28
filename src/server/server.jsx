@@ -35,13 +35,12 @@ const createReactApp = async (location) => {
 };
 
 app.use("/api", indexRouter);
-app.use(errorHandler);
-app.use(notFound);
-
 app.get("*", async (req, res) => {
   const indexHtml = await createReactApp(req.url);
   res.status(200).send(indexHtml);
 });
+app.use(errorHandler);
+app.use(notFound);
 
 app.listen(PORT, () => {
   console.log(`Server started on port ${PORT}`);
