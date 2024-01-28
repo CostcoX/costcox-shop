@@ -109,11 +109,11 @@ export default function FooterComponent() {
             >
               {subcategories?.map(({ subcategoryLabel, link }) => (
                 <SfListItem
-                  className="py-2 !bg-transparent typography-text-sm font-body w-fit text-center"
+                  className="py-2 !bg-transparent !text-[#0096B1] w-fit text-center"
                   key={subcategoryLabel}
                 >
                   <SfLink
-                    className=" text-black no-underline  hover:underline  "
+                    className=" text-black no-underline hover:!text-[#0096B1] text-lg font-medium  hover:underline  "
                     variant="secondary"
                     href={link}
                   >

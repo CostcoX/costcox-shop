@@ -1,0 +1,28 @@
+.categoryScroller button:first-child{
+/* background-color: transparent!important ;   */
+position: absolute;
+bottom: 285px;
+width: 10px;
+height: 10px;
+right: 70px;
+}
+
+.categoryScroller button:last-child{
+position: absolute;    
+bottom: 285px;
+width: 10px;
+height: 10px;
+right: 40px;
+    }
+.categoryScroller button:first-child > svg{
+    color: black;
+    position: relative ;
+    bottom: 15px;
+    right: 13px;
+}
+.categoryScroller button:last-child > svg{
+        color: black;
+        position: relative ;
+        bottom: 15px;
+        right: 13px;
+    }

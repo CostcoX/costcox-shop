@@ -1,10 +1,7 @@
 import { SfButton } from '@storefront-ui/react';
 import React from 'react';
 export default function Hero() {
-  const buttonStyle = {
-    backgroundColor: "#0096B1",
-  color:"#fff"  
-} 
+
   return (
     <div className="relative max-h-[600px] border-2 mt-10">
       <picture>
@@ -34,7 +31,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 mt-6 ">
             {/* <SfButton className='bg-[#0096B1] hover:bg-[#00879f]' size="lg"> Order now </SfButton> */}
-            <SfButton size="lg"  style={buttonStyle} className="" variant="secondary">
+            <SfButton size="lg"  className="!bg-white border-2 !text-[#0096B1] !border-[#0096B1] hover:!bg-[#0096B1] hover:!text-white" >
               Show more
             </SfButton>
           </div>
