@@ -14,6 +14,7 @@ import {
   SfListItem,
 } from "@storefront-ui/react";
 import logoImg from "../../../../public/images/logo.png";
+import { Link } from "react-router-dom";
 
 const categories = [
   {
@@ -112,13 +113,13 @@ export default function FooterComponent() {
                   className="py-2 !bg-transparent !text-[#0096B1] w-fit text-center"
                   key={subcategoryLabel}
                 >
-                  <SfLink
+                  <Link
                     className=" text-black no-underline hover:!text-[#0096B1] text-lg font-medium  hover:underline  "
                     variant="secondary"
-                    href={link}
+                    to={link}
                   >
                     {subcategoryLabel}
-                  </SfLink>
+                  </Link>
                 </SfListItem>
               ))}
             </ul>

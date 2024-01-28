@@ -1,8 +1,23 @@
 import { ofType } from "redux-observable";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import { mergeMap, catchError } from "rxjs/operators";
 import { combineEpics } from "redux-observable";
-import { from } from "rxjs";
+import { from, of } from "rxjs";
 import * as productActions from "../reducers/products/productActions";
+import * as productApi from "../../apiServices/productApi";
+
+export const getCategoriesEpic = (action$) => {
+  return action$.pipe(
+    ofType(productActions.GET_ALL_CATEGORIES),
+    mergeMap(({ type, payload }) => {
+      return productApi.getCategories().pipe(
+        mergeMap((respone) => {
+          return of(productActions.getAllCategoriesSuccess(respone));
+        }),
+        catchError((e) => console.log(e))
+      );
+    })
+  );
+};
 
 export const getAllProductsEpic = (action$) => {
   return action$.pipe(
@@ -14,4 +29,4 @@ export const getAllProductsEpic = (action$) => {
   );
 };
 
-export default combineEpics(getAllProductsEpic);
+export default combineEpics(getCategoriesEpic, getAllProductsEpic);
