@@ -61,7 +61,7 @@ function ButtonNext({ disabled, ...attributes }) {
 
 ButtonNext.defaultProps = { disabled: false };
 
-const ProductSuggestionSlider = () => {
+function ProductSuggestionSlider() {
   return (
     <SfScrollable
       className="m-auto py-4 items-center w-full [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
@@ -105,6 +105,6 @@ const ProductSuggestionSlider = () => {
       ))}
     </SfScrollable>
   );
-};
+}
 
 export default ProductSuggestionSlider;

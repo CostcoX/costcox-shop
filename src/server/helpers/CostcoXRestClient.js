@@ -17,18 +17,18 @@ class CostcoXRestClient {
     }
   }
 
-  async post(url, data, headers = {}) {
+  async post(url, payload, headers = {}) {
     try {
-      const response = await this.client.post(url, data, { headers });
+      const response = await this.client.post(url, payload, { headers });
       return response.data;
     } catch (error) {
       console.error(error);
     }
   }
 
-  async put(url, data, headers = {}) {
+  async put(url, payload, headers = {}) {
     try {
-      const response = await this.client.put(url, data, { headers });
+      const response = await this.client.put(url, payload, { headers });
       return response.data;
     } catch (error) {
       console.error(error);

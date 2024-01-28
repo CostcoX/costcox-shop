@@ -13,29 +13,27 @@ import ShoppingCartPage from "../ShoppingCart/ShoppingCartPage";
 import { ShoppingCartWrapper } from "../ShoppingCart/ShoppingCartWrapper";
 import ReturnPolicy from "../ReturnPolicy/ReturnPolicy";
 import AboutUs from "../AboutUs/AboutUs";
+import CheckoutContainer from "../checkout/CheckoutContainer";
 
 const CostcoxShopContainer = () => {
- 
   return (
-    <div>
-      <Routes>
-        <Route exact path="/login" element={<LoginPageComponent />} />
-        <Route exact path="/register" element={<LoginPageComponent />} />
-        <Route path="/account-settings" element={<AccountSettings />}>
-          <Route path="orders" element={<UserOrdersComponent />} />
-          <Route path="settings" element={<UserSettingsComponent />} />
-          <Route path="address" element={<UserAddressComponent />} />
-          <Route path="payments" element={<UserPaymentMethods />} />
-        </Route>
-        <Route exact path="/shop" element={<MainShopContainer />} />
-        <Route path="/products/:id" element={<ProductDetailComponent />} />
-        <Route exact path="/" element={<CostcoXShopComponent />} />
-        <Route exact path="/cart" element={<ShoppingCartWrapper />} />
-        <Route exact path="/return-policy" element={<ReturnPolicy/>}/>
-        <Route exact path="/about-us" element={<AboutUs />}/>
-  
-      </Routes>
-    </div>
+    <Routes>
+      <Route exact path="/login" element={<LoginPageComponent />} />
+      <Route exact path="/register" element={<LoginPageComponent />} />
+      <Route path="/account-settings" element={<AccountSettings />}>
+        <Route path="orders" element={<UserOrdersComponent />} />
+        <Route path="settings" element={<UserSettingsComponent />} />
+        <Route path="address" element={<UserAddressComponent />} />
+        <Route path="payments" element={<UserPaymentMethods />} />
+      </Route>
+      <Route exact path="/shop" element={<MainShopContainer />} />
+      <Route path="/products/:id" element={<ProductDetailComponent />} />
+      <Route exact path="/" element={<CostcoXShopComponent />} />
+      <Route exact path="/cart" element={<ShoppingCartWrapper />} />
+      <Route exact path="/return-policy" element={<ReturnPolicy />} />
+      <Route exact path="/about-us" element={<AboutUs />} />
+      <Route exact path="/checkout" element={<CheckoutContainer />} />
+    </Routes>
   );
 };
 
